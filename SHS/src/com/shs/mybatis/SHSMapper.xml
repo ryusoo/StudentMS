@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shs.mybatis.SHSMapper.xml">
+	<!-- ;을 안써야한다. <insert></insert> 단위이기 때문이다 -->
+  	<insert id="memInsert"> <!-- insert, update, delete는 결과값이 0과 1로만 나온다 -->
+  		INSERT INTO shsmember(sid, sname, sage, smajor, sphone)
+		VALUES(seq_shsmember_sid.NEXTVAL, #{sname}, #{sage}, #{smajor}, #{sphone} )
+  	</insert>
+  	<!-- resultType 결과값을 반환하는 Type은 실제 패키지경로를 모두 작성해야 함. ex)com.shs.dto.MemberDTO
+  	그러나 Configuration.xml파일에 TypeAlias(별명)을 사용하면 MemberDTO처럼 간단하게 입력 가능 
+  	 type="com.shs.dto.MemberDTO" alias="MemberDTO" from Configuration.xml-->
+  	<!-- 다 가져와서 필요한 것만 쓰면 된다 -->
+  	<select id="memSelect" resultType="MemberDTO">
+  		 SELECT * FROM shsmember
+  		 ORDER BY sid
+  	</select>
+  	
+  	<!-- parameterType은 매개변수 타입, resultType은 반환하는 return값 즉, 결과의 타입 -->
+  	<select id="memInfo" parameterType="int" resultType="MemberDTO">
+  	 	SELECT * FROM shsmember
+  	 	WHERE sid = #{id}
+  	</select>
+  	
+  	<!-- binding 변수, 실제값을 그때그때 값을 받아서 넣겠다는 뜻. #{} -->
+  	<update id="memUpdate" parameterType="MemberDTO">
+  		UPDATE shsmember
+  		   SET sname = #{sname},
+  			   sage = #{sage},
+  			   smajor = #{smajor},
+  			   sphone = #{sphone}
+		WHERE sid = #{sid} 				
+  	</update>
+  	
+  	<!-- 학생제적 -->
+  	<delete id="memDelete" parameterType="int">
+  		DELETE FROM shsmember
+  		WHERE sid = #{id}
+  	</delete>
+</mapper>
