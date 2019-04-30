@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.shs.action.Action;
 import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
+import com.shs.action.InsertAction;
+import com.shs.action.InsertPlayAction;
+import com.shs.action.WelcomeAction;
 
 /**
  * Servlet implementation class FrontController
@@ -46,9 +49,9 @@ public class FrontController extends HttpServlet {
 		String command = uri.substring(ctx.length());
 		// uri에서 ctx를 빼면 내가 원하는 소스만 뽑을 수 있다.
 
-		System.out.println("uri>>>"+ uri);
-		System.out.println("ctx>>>"+ ctx);
-		System.out.println("cmd>>>"+ command);
+		// System.out.println("uri>>>"+ uri);
+		// System.out.println("ctx>>>"+ ctx);
+		// System.out.println("cmd>>>"+ command);
 		
 		System.out.println("페이지 이동===>" + command);
 		
@@ -56,8 +59,19 @@ public class FrontController extends HttpServlet {
 			action = new IndexAction(); // 객체 생성, 실제 동작하는 메서드
 			forward = action.execute(request, response); // excute, execute 둘다 가능
 			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
-			// 
-		}
+		} else if(command.equals("/insert.shs")) { // 등록 화면출력
+			action = new InsertAction(); // 객체 생성, 실제 동작하는 메서드
+			forward = action.execute(request, response); 
+		} else if(command.equals("/insertPlay.shs")) { 
+			action = new InsertPlayAction(); // Play가 붙어있으면 실제 동작(Action)하는 메서드
+			forward = action.execute(request, response); 
+			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
+		} else if(command.equals("/welcome.shs")) { 
+			action = new WelcomeAction(); // Play가 붙어있으면 실제 동작(Action)하는 메서드
+			forward = action.execute(request, response); 
+			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
+		} 
+		
 		
 		// ------------------공통 분기 작업-------------------------
 		if(forward != null) { // forward에 값 들어있음. if문 탄다.

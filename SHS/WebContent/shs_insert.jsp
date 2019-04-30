@@ -107,7 +107,7 @@
 		</a>
 			<div class="shs_manager"> - 학사관리 - </div>
 		
-		<form action="SHSInsert" id="frm_insert" name="frm_insert" method="POST"> <!-- action은 목적지  -->
+		<form action="insertPlay.shs" id="frm_insert" name="frm_insert" method="POST"> <!-- action은 목적지  -->
 			<div class="in_content">
 				<div class="div_input">
 					<label for="input_name">이름: </label>
@@ -137,7 +137,7 @@
 
 			<div class="div_index btn_wrap">
 				<!-- 경로를 화면단(jsp)이 아니라 servlet으로 지정해 준다 -->
-				<a href="index" class="btn_index btn3">취소</a> 
+				<a href="index.shs" class="btn_index btn3">취소</a> 
 				<a href="#" class="btn_index btn1 submitBtn">등록</a> 
 			</div>
 

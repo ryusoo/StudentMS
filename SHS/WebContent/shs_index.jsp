@@ -73,7 +73,7 @@
 </head>
 <body>
 	<div class="content">
-		<a href="index.jsp">
+		<a href="index.shs">
 			<div class="shs_title">
 				JAVA기반 스마트하이브리드<br>
 				개발자 과정 2기
@@ -84,11 +84,11 @@
 			<div class="container">
 				<div class="div_index">
 					<!-- 경로에 servlet을 복붙함 GET, POST 지정안했기 때문에 default로 GET방식으로 감 -->
-					<a href="SHSInsert" class="btn_index btn1">학생등록</a>
+					<a href="insert.shs" class="btn_index btn1">학생등록</a>
 				</div>
 			
 				<div class="div_index">
-					<a href="SHSSelect" class="btn_index btn2">출석부</a>
+					<a href="select.shs" class="btn_index btn2">출석부</a>
 				</div>
 				<div class="div_index">
 					<a href="#" class="btn_index btn3">만든이</a>
