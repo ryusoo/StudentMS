@@ -7,7 +7,7 @@ function nameCheck(){ // name매개변수 지움
 		$('.err_msg').eq(0).css('display', 'block').css('color', 'tomato')
 				.text('필수정보입니다.');
 		return false;
-	} else if (regNum.test()) {
+	} else if (regNum.test(name)) {
 		
 		// isNAN은 숫자를 보면 flase반환 !를 붙여서 true로 만들어 타게 만든다.)(!isNaN)
 		$('.err_msg').eq(0).css('display', 'block').css('color', 'tomato')

@@ -2,6 +2,7 @@
 		* { 
 			font-family: 'Noto Sans KR', sans-serif;
 			user-select: none;
+			box-sizing: border-box;
  		}
 		body, ul { margin: 0;, padding: 0; }
 		a { color: inherit; text-decoration: none; }

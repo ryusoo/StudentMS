@@ -31,12 +31,15 @@
 		}
 		.btn_index {
 			padding: 15px 12px;
-			background-color: dodgerblue;
+			background-color: yellowgreen;
 			color: white;
-			width: 120px;
+			width: 90px; 
+			height: 90px; 
 			display: inline-block;
-			border-radius: 10px;
+			line-height: 90px; 
+			
 			font-size: 20px;
+			border-radius: 50%; 
 		}
 		.btn_index:hover {
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -45,19 +48,28 @@
 		.div_index {
 			padding-bottom: 30px;
 			text-align: center;
+			
 		}
 		.btn2 {
 			background-color: orange;
 		}
 		.btn3 {
-			background-color: mediumseagreen;
+			background-color: salmon;
+		}
+		.btn4 {
+			background-color: mediumpurple;
 		}
 		.container {
-			height: 320px;
+			height: 400px;
 			display: flex;
 			flex-direction: column;
-			padding-top: 50px;
-			justify-content: space-evenly;
+			
+			justify-content: space-evenly; 
+			padding: 20px; 
+		}
+		.line1, .line2 { 
+			display: flex;
+			justify-content: space-around; 
 		}
 	</style>
 </head>
@@ -69,17 +81,26 @@
 			<div class="shs_manager"> - 학사관리 - </div>
 
 			<div class="container">
-				<div class="div_index">
-					<!-- 경로에 servlet을 복붙함 GET, POST 지정안했기 때문에 default로 GET방식으로 감 -->
-					<a href="insert.shs" class="btn_index btn1">학생등록</a>
+				<div class="line1">
+					<div class="div_index">
+						<a href="#" class="btn_index btn3">소개</a>
+					</div>
+					<div class="div_index">
+						<a href="select.shs" class="btn_index btn2">출석부</a>
+					</div>
 				</div>
-			
-				<div class="div_index">
-					<a href="select.shs" class="btn_index btn2">출석부</a>
+				
+				<div class="line2">
+				
+					<div class="div_index">
+						<a href="search.shs" class="btn_index btn4">학생검색</a>
+					</div>
+					<div class="div_index">
+						<!-- 경로에 servlet을 복붙함 GET, POST 지정안했기 때문에 default로 GET방식으로 감 -->
+						<a href="insert.shs" class="btn_index btn1">학생등록</a>
+					</div>
 				</div>
-				<div class="div_index">
-					<a href="#" class="btn_index btn3">만든이</a>
-				</div>
+				
 			</div>
 		
 	</div>
