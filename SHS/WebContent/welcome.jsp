@@ -5,15 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/common.css">
 <style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
-		* { 
-			font-family: 'Noto Sans KR', sans-serif;
-			user-select: none;
- 		}
-		body, ul { margin: 0;, padding: 0; }
-		a { color: inherit; text-decoration: none; }
-		ul { list-style: none; }
+		
 
 		.content {
 			width: 390px;
@@ -25,12 +19,7 @@
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
 						0 2px 10px 0 rgba(0,0,0,0.12);
 		}
-		.shs_title {
-			padding-top: 40px;
-			text-align: center;
-			font-size: 30px;
-			color: black;
-		}
+		
 		.shs_manager {
 			padding-top: 20px;
 			padding-bottom: 20px;
@@ -63,12 +52,7 @@
 </head>
 <body>
 	<div class="content">
-		<div class="shs_title">
-			<a href="index.jsp">
-				JAVA기반 스마트하이브리드<br>
-				개발자 과정 2기
-			</a>
-		</div>
+		<%@ include file="include/header.jsp" %>
 		<div class="shs_manager"> - 환영합니다. - </div>
 		
 		<div class="container">

@@ -10,16 +10,9 @@
 <head>
 <meta charset="UTF-8">
 <title>학생수정</title>
+<link rel="stylesheet" href="css/common.css">
 <style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
-
-		* { 
-			font-family: 'Noto Sans KR', sans-serif;
-			user-select: none;
- 		}
-		body, ul { margin: 0;, padding: 0; }
-		a { color: inherit; text-decoration: none; }
-		ul { list-style: none; }
+		
 		hr { 
 			margin: 2px 0px;
 			border: 1px dashed #515151;
@@ -36,12 +29,7 @@
 						0 2px 10px 0 rgba(0,0,0,0.12);
 
 		}
-		.shs_title {
-			padding-top: 40px;
-			text-align: center;
-			font-size: 30px;
-			color: black;
-		}
+		
 		.shs_manager {
 			padding-top: 20px;
 			padding-bottom: 20px;
@@ -113,12 +101,7 @@
 </head>
 <body>
 	<div class="content">
-		<a href="index.jsp">
-			<div class="shs_title">
-				JAVA기반 스마트하이브리드<br>
-				개발자 과정 2기
-			</div>
-		</a>
+		<%@ include file="include/header.jsp" %>
 			<div class="shs_manager"> - 학사수정 - </div>
 		
 		<form action="SHSUpdate" id="frm_update" name="frm_update" method="POST">
