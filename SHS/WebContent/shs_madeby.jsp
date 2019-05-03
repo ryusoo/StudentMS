@@ -36,7 +36,7 @@
 			width: 90px;
 			display: inline-block;
 			border-radius: 10px;
-			font-size: 20px;
+			font-size: 15px;
 		}
 		.btn_index:hover {
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -104,7 +104,7 @@
 
 
 			<div class="div_index">
-				<a href="index.jsp" class="btn_index btn3">뒤로가기</a>
+				<a href="index.shs" class="btn_index btn3">뒤로가기</a>
 			</div>
 		
 

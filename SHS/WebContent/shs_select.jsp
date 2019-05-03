@@ -39,7 +39,7 @@
 			width: 90px;
 			display: inline-block;
 			border-radius: 10px;
-			font-size: 20px;
+			font-size: 15px;
 		}
 		.btn_index:hover {
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -132,6 +132,12 @@
 			color: yellowgreen;
 			font-weight: bold;
 		}
+		.cnt_text {
+			display: block;
+			text-align: right;
+			/* margin-top: -20px; */
+			padding-right: 10px;
+		}
 
 	</style>
 </head>
@@ -179,15 +185,20 @@
 							<td class="sid">${mDto.sid}</td>
 							<td class="sname">${mDto.sname}</td>
 							<td>${mDto.sphone}</td>
-							<td><a href="SHSUpdate?id=${mDto.sid}" class="uBtn">수정</a></td> 
+							<td><a href="update.shs?id=${mDto.sid}" class="uBtn">수정</a></td> 
 							<td><a id="open_btn" class="dBtn adBtn">삭제</a></td> <!-- 모달창 열림 -->
 						</tr>
 					</c:forEach>
 				</table>
 				
 			</div>
+			<div class="in_content"><!--  cnt는 SelectPlayAction에서 보내준 값이다 -->
+			 	<c:if test="${cnt > 0}">
+					<span class="cnt_text">총 인원 ${cnt}명</span>
+				</c:if>
+			</div>
 			<div class="div_index">
-				<a href="index" class="btn_index btn3">뒤로가기</a>
+				<a href="index.shs" class="btn_index btn3">뒤로가기</a>
 			</div>
 		
 
@@ -209,13 +220,13 @@
 			name = $(this).closest('tr').find('.sname').text();
 			$('.name').text(name);
 			$('#modal_all').css('display', 'flex');
-			alert(id + ", " + name);
+			// alert(id + ", " + name);
 		});
 		$('#close_btn').click(function(){
 			$('#modal_all').css('display', 'none');
 		});
 		$('.modal_dBtn').click(function(){
-			location.href="SHSDelete?id="+id;
+			location.href="delete.shs?id="+id;
 		});
 		
 
