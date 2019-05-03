@@ -30,14 +30,12 @@
 			font-size: 20px;
 		}
 		.btn_index {
-			padding: 15px 12px;
 			background-color: yellowgreen;
 			color: white;
 			width: 90px; 
 			height: 90px; 
 			display: inline-block;
 			line-height: 90px; 
-			
 			font-size: 20px;
 			border-radius: 50%; 
 		}
@@ -83,6 +81,7 @@
 			<div class="container">
 				<div class="line1">
 					<div class="div_index">
+					<!-- 1. insert.shs URL을 가지고 web.xml로 이동 -->
 						<a href="introduce.shs" class="btn_index btn3">소개</a>
 					</div>
 					<div class="div_index">

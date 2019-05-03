@@ -126,6 +126,9 @@
 				<a href="index.shs" class="btn_index btn3">취소</a> 
 				
 				<!-- <a href="#" class="btn_index btn1 submitBtn">등록</a>  -->
+				<!-- (1) button 클릭시 jQuery의 click() 이벤트 발생 
+					 jQuery click()이벤트 function()으로 이동 -->
+				
 				<button type="submit" class="btn_index btn1 submitBtn">등록</button>
 				
 			</div>
@@ -168,8 +171,14 @@
 				phoneCheck(); // phone지움
 			});
 			
+			
+			
+			
 			// 등록버튼 클릭시 form태그 안에 있는 input태그의 값을 servlet으로 전송
 			$('.submitBtn').click(function(){
+				
+				
+				// (2) 유효성체크 시작!
 				// var name = $.trim($('#input_name').val());
 				// 등록 버튼 클릭시 다른 유효성검사한 것이 통과한 것을 보내야 함.
 				if(!nameCheck()){ // false가 오면 !만나면서 true가되어서 이 if문을 탄다.
@@ -194,6 +203,16 @@
 				// location.href="http://www.naver.com"; // 유효성체크 성공후 등록버튼 누르면 네이버페이지로 넘어감.
 				//-----: 유효한 값만 있음 -----
 				// form태그의 action주소로 method방식을 통하여 데이터를 전송
+				
+				// (3) 유효성체크 완료: 모두 유효한 값으로 판명
+				// #frm_insert 속성을 가진 form태그를 submit()함
+				
+				// * submit 동작
+				// * METHOD = POST
+				// * Action = "insertPlay.shs"
+				// * form 태그 내부에 있는 input태그들의 value(이름, 나이, 전공, 번호)를 
+				// * POST방식으로 insertPlay.shs(FrontController)로 전송
+				
 				// Action: SHSInsert(Servlet)
 				// Method: POST 방식
 				$('#frm_insert').submit();

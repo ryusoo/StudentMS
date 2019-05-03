@@ -38,6 +38,8 @@ public class MemberDAO {
 	// 학생등록
 	// 다른 패키지에 있기 때문에 import해줘야 한다.
 	public int memInsert(MemberDTO mDto) {
+		// (11) Mybatis를 사용하기 위해 sqlSessionFactory를 사용하여 sqlSession을 생성
+		//      매개변수로 true를 넣어 auto commit 기능 추가
 		
 		// mybatis 공장에서 일할 것을 만든다. 이 것이 어떤 DB로 가서 일해야할 지 다 알고있다.
 		sqlSession = sqlSessionFactory.openSession(true); //2. commit방법 true써줌 (insert, update, delete만 해주면 됨, auto-commit해줌)
@@ -45,8 +47,14 @@ public class MemberDAO {
 		
 		
 		try { // sqlSession (worker)가 insert 일을 하는데 SQL문(memInsert)
+			// (12) 생성된 sqlSession을 사용하여 mybatis insert 구문을 실행(**Mapper.xml),
+			// 		memInsert를 ID값으로 가지는 SQL문을 실행
+			//	    SQL문 바인딩변수(ex: #{sid})에 들어갈 값은 mDto
+			// * el태그로 값받을 때 jsp 에서 쓰는 바인딩 변수 ${}
+			// * Mapper에서 바인딩 변수 받을 때 #{}
+			// 		결론 : mapper.xml로 가서 memInsert SQL문에 mDto값을 바인딩변수로 채워주고 SQL문을 실행해라
 			result = sqlSession.insert("memInsert", mDto); // data같이 보냄
-			
+			// (14) DB에서 실행한 SQL문의 결과가 result 변수에 담김
 			if(result > 0) {
 				System.out.println("등록 성공");
 			} else {
@@ -58,7 +66,7 @@ public class MemberDAO {
 		} finally { // 무조건 탄다.
 			sqlSession.close(); // 빌려쓰는 애들은 다 닫아서 반납해줘야한다. 자원은 닫아준다. (예, DB,, 스캐너,,_
 		}
-		
+		// (15) DB에서 SQL문 실행 결과가 담긴 result 변수를 호출했던 곳(InsertPlayAction)으로 전송
 		return result;
 	}
 	
