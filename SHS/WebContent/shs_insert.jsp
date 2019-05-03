@@ -36,6 +36,8 @@
 			display: inline-block;
 			border-radius: 10px;
 			font-size: 20px;
+			border: none;
+			cursor: pointer;
 		}
 		.btn_index:hover {
 			box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),
@@ -70,6 +72,7 @@
 			outline: none;
 			border: 1px solid #aaa;
 			padding: 0 10px;
+			
 		}
 		.btn_wrap {
 			display: flex;
@@ -121,7 +124,10 @@
 			<div class="div_index btn_wrap">
 				<!-- 경로를 화면단(jsp)이 아니라 servlet으로 지정해 준다 -->
 				<a href="index.shs" class="btn_index btn3">취소</a> 
-				<a href="#" class="btn_index btn1 submitBtn">등록</a> 
+				
+				<!-- <a href="#" class="btn_index btn1 submitBtn">등록</a>  -->
+				<button type="submit" class="btn_index btn1 submitBtn">등록</button>
+				
 			</div>
 
 

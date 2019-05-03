@@ -83,7 +83,7 @@
 			<div class="container">
 				<div class="line1">
 					<div class="div_index">
-						<a href="#" class="btn_index btn3">소개</a>
+						<a href="introduce.shs" class="btn_index btn3">소개</a>
 					</div>
 					<div class="div_index">
 						<a href="select.shs" class="btn_index btn2">출석부</a>

@@ -14,6 +14,7 @@ import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
 import com.shs.action.InsertAction;
 import com.shs.action.InsertPlayAction;
+import com.shs.action.IntroduceAction;
 import com.shs.action.SearchAction;
 import com.shs.action.SearchPlayAction;
 import com.shs.action.WelcomeAction;
@@ -78,6 +79,10 @@ public class FrontController extends HttpServlet {
 			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
 		} else if(command.equals("/searchPlay.shs")) { 
 			action = new SearchPlayAction(); // 검색 동작(Action)
+			forward = action.execute(request, response); 
+			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
+		}  else if(command.equals("/introduce.shs")) { 
+			action = new IntroduceAction(); // 검색 동작(Action)
 			forward = action.execute(request, response); 
 			// 우측에서 좌측으로 읽는다. action클래스의 execute함수를 실행해라, 매개변수를 request, response를 보낸다
 		}
